@@ -40,5 +40,5 @@ legend(1, 30, legend=c("Valor real", "Valor generado con modelo browniano"),
        col=c("black", "red"), lty=1:1, cex=.8)
 
 plot(fs,type="l",xlab="Tiempo (dias)",ylab="Delta de S")
-title("Función de cambio del precio diario")
+title("FunciÃ³n de cambio del precio diario")
 
