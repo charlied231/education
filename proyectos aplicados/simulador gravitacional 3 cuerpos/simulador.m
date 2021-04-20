@@ -1,7 +1,7 @@
 clc
 clear
 close all
-%% Caso de un sistema de 2 planetas "gemelos" y un planeta osilando linealmente entre ellos
+%% Sistema gravitatorio de 3 cuerpos.
 %% Párametros constantes
 Gm = 6.67*10^-11;           % Constante de Gravitación Universal en Nm2/s2
 G = Gm *(1*10^-12);         % Gravedad en N(millones de km)2/s2
@@ -16,7 +16,6 @@ r3 = 0.01;                  % Radio del planeta 3 (millones de km)
 %% Declaración de variables iniciales
 h = 0.0001;           % Salto del ciclo
 t = (0:h:10);         % Intervalo de tiempo (Cada t = 1 año terrestre) (Normal 11.8)
-T = 200;              % Intervalo para graficar
 
 %% Condiciones iniciales del objeto 1
     % Inicializamos vectores para el objeto 1, tanto de posición como velocidad
@@ -152,6 +151,9 @@ curve2 = animatedline('Color','#FFFFFF','LineWidth',1,'MaximumNumPoints',1100);
 curve3 = animatedline('Color','#FFFFFF','LineWidth',1,'MaximumNumPoints',1100);
 hold on;
 
+T = 200;              % Intervalo para graficar(cambiarlo para hacer mas rapida la simulación)
+
+
 for i=1:T:length(z1)
     delete(head1);   
     delete(head2);
@@ -167,3 +169,5 @@ for i=1:T:length(z1)
 end
 hold off
 
+%como nota es relevante mencionar que en el caso de las colisiones o las ocasiones que los cuerpos pasan muy 
+%cercanos unos de otros, por la inexactitud del metodo numerico ocurren simulaciones fallidas.
